@@ -2,6 +2,7 @@ package generators
 
 import (
 	"fmt"
+
 	"log"
 
 	"github.com/jung-kurt/gofpdf"

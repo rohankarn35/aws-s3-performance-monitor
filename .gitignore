@@ -1,5 +1,8 @@
 .env
 go.mod
 go.sum
-static/
-upload_file*.csv
+*.csv
+*.pdf
+Dockerfile
+*.txt
+

@@ -5,21 +5,32 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 )
 
-// GenerateFile creates a file of the specified size (in bytes)
+// GenerateFile creates a file of the specified size (in bytes) in the static directory
 func GenerateFile(fileName string, sizeInBytes int) {
-	// Ensure the static directory exists
+	// Define the static directory and full file path
 	staticDir := "static"
+	filePath := filepath.Join(staticDir, fileName)
+
+	// Check if the file already exists in the static directory
+	if _, err := os.Stat(filePath); !os.IsNotExist(err) {
+		fmt.Printf("File already exists: %s\n", filePath)
+		return // Do nothing if the file exists
+	}
+
+	// Check if the static directory exists
 	if _, err := os.Stat(staticDir); os.IsNotExist(err) {
+		// If static directory doesn't exist, create it
 		err = os.Mkdir(staticDir, os.ModePerm)
 		if err != nil {
 			log.Fatalf("Failed to create static directory: %v", err)
 		}
+		fmt.Printf("Created static directory: %s\n", staticDir)
 	}
 
 	// Create the file in the static directory
-	filePath := fmt.Sprintf("%s/%s", staticDir, fileName)
 	file, err := os.Create(filePath)
 	if err != nil {
 		log.Fatalf("Failed to create file: %v", err)
