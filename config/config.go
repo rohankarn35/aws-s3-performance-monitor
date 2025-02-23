@@ -32,6 +32,7 @@ func LoadConfig() (Config, error) {
 	// Define file sizes to test
 	fileSizes := map[string]int{
 		"1MB.txt": 1 * 1024 * 1024,
+		//add other file sizes
 	}
 
 	// Storage classes to test
