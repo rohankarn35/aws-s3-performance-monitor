@@ -36,8 +36,8 @@ This project measures the performance of AWS S3 operations (upload, download, de
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/rohankarn35/aws-s3-benchmark.git
-cd aws-s3-benchmark
+git clone https://github.com/rohankarn35/aws-s3-performance-monitor.git
+cd aws-s3-performance-monitor
 ```
 
 ### Install Go Dependencies
