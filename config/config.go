@@ -35,7 +35,7 @@ func LoadConfig() (Config, error) {
 	}
 
 	// Storage classes to test
-	storageClasses := []string{"STANDARD", "STANDARD_IA"}
+	storageClasses := []string{"STANDARD", "STANDARD_IA", "ONEZONE_IA"}
 
 	return Config{
 		AccessKey:    accessKey,

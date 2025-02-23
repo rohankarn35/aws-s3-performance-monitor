@@ -24,3 +24,7 @@ clean: stop
 
 # Rebuild and run the Docker container
 rerun: clean run
+
+# Check the logs of the Docker container
+logs:
+	docker logs $(DOCKER_CONTAINER_NAME)
